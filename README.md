@@ -8,14 +8,14 @@ This project is part of the **AT82.05 - Artificial Intelligence: Natural Languag
 
 ```
 A7_NLP-Assignment/
-├── A7.ipynb                   # Main Jupyter Notebook (Tasks 1–4)
-├── webapp.py                 # Streamlit app (Task 5)
-├── student_lora/            # LoRA adapter folder
+├── A7.ipynb                        # Main Jupyter Notebook (Tasks 1–4)
+├── webapp.py                       # Streamlit app (Task 5)
+├── student_lora/                   # LoRA adapter folder
 │   ├── adapter_config.json
 │   └── adapter_model.safetensors
-├── results/                  # Evaluation screenshots
+├── results/                        # Evaluation screenshots
 │   └── Screenshot_*.png
-├── README.md                # This file
+├── README.md                       # This file
 ```
 
 ---
