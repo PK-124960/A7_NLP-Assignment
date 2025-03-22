@@ -56,6 +56,37 @@ I use the [Hate Speech and Offensive Language Dataset](https://github.com/t-davi
 | Even Layer  | 0.832    | 0.832     | 1.0    | 0.908    |
 | **LoRA**    | 0.824    | 0.831     | 0.989  | 0.903    |
 
+## 💬 Task 4.2: Discussion – Distillation vs LoRA
+
+### 📉 Challenges Faced
+
+During the implementation of knowledge distillation for the Odd and Even Layer student models, several issues emerged:
+
+- **Imbalanced Student Performance**: The Odd Layer model performed extremely poorly (Accuracy = 0.168, F1 = 0.0), failing to learn meaningful patterns from the teacher. In contrast, the Even Layer student reached high performance, suggesting that certain layers (e.g., `{2,4,6,8,10,12}`) carry more transferable knowledge than others.
+- **Sensitivity to Layer Selection**: Mapping student layers to teacher layers is highly sensitive. A poor mapping (as seen with Odd layers) can result in underfitting or ineffective learning.
+- **No Supervised Signal in Distillation**: Unlike LoRA, distillation training didn't use the actual labels during training — only MSE loss between hidden states. This limited its ability to correct mistakes or generalize.
+
+### ✅ LoRA Strengths
+
+- **Fine-tuned with Labels**: LoRA was trained with true labels and cross-entropy loss, leading to better generalization and more reliable performance (F1 = 0.903).
+- **Training Efficiency**: LoRA fine-tuning was faster and more memory-efficient since it modified only a small number of parameters.
+- **Stable Results**: The LoRA model showed consistent performance across toxic and non-toxic samples.
+
+### 🔧 Suggested Improvements
+
+- For **Distillation**:
+  - Use a **hybrid approach**: Combine MSE (hidden state) loss with supervised loss (cross-entropy) to improve learning.
+  - Perform **layer-wise correlation analysis** to choose the most informative layers for student mapping.
+  - Add **intermediate supervision** (e.g., matching logits or attention maps) instead of just hidden states.
+
+- For **LoRA**:
+  - Try larger `r` values or more target modules (like `query`, `value`, `key`) to increase learning capacity.
+  - Combine LoRA with quantization for deployment optimization.
+
+---
+
+> 💡 Based on the results, **Even Layer Distillation** and **LoRA** both perform well, but **LoRA** offers better training simplicity and stability — making it the more practical choice in most scenarios.
+
 📷 See the [`results/`](results/) folder for screenshots of predictions and evaluation logs.
 
 ---
