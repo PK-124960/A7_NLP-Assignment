@@ -34,7 +34,7 @@ A7_NLP-Assignment/
 
 ## 📥 Dataset
 
-We use the [Hate Speech and Offensive Language Dataset](https://github.com/t-davidson/hate-speech-and-offensive-language), which contains over 24k tweets labeled as hate speech, offensive language, or neither. Labels are converted into binary: `1 = toxic`, `0 = not toxic`.
+I use the [Hate Speech and Offensive Language Dataset](https://github.com/t-davidson/hate-speech-and-offensive-language), which contains over 24k tweets labeled as hate speech, offensive language, or neither. Labels are converted into binary: `1 = toxic`, `0 = not toxic`.
 
 ---
 
@@ -52,9 +52,9 @@ We use the [Hate Speech and Offensive Language Dataset](https://github.com/t-dav
 
 | Model       | Accuracy | Precision | Recall | F1 Score |
 |-------------|----------|-----------|--------|----------|
-| Odd Layer   | ...      | ...       | ...    | ...      |
-| Even Layer  | ...      | ...       | ...    | ...      |
-| **LoRA**    | ...      | ...       | ...    | ...      |
+| Odd Layer   | 0.168    | 0.0       | 0.0    | 0.0      |
+| Even Layer  | 0.832    | 0.832     | 1.0    | 0.908    |
+| **LoRA**    | 0.824    | 0.831     | 0.989  | 0.903    |
 
 📷 See the [`results/`](results/) folder for screenshots of predictions and evaluation logs.
 
@@ -73,7 +73,8 @@ streamlit run webapp.py
 
 ### 📷 Screenshot
 
-![Toxic Comment Prediction](results/Screenshot%202025-03-22%20133025.png)
+![EX1: Toxic Comment Prediction](results/picture1.png)
+![EX2: Toxic Comment Prediction](results/picture2.png)
 
 ---
 
@@ -107,7 +108,7 @@ pip install -r requirements.txt
 ## ✍️ Author
 
 - 👨‍🎓 Student ID: **PK_124960**
-- 📅 Assignment Due: March 2025
+- 📅 Assignment Due: 24 March 2025
 - 📘 Course: AT82.05 - Artificial Intelligence: NLU
 
 ---
